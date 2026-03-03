@@ -151,21 +151,24 @@ Matrix transformMenu()
         // get more details
         switch (choice) {
             case 'T':
+                cout << "Enter the x and y translation: ";
                 cin >> x >> y;
                 result = translate(x, y) * result;
                 break;
             case 'R':
+                cout << "Enter the angle of rotation (degrees): ";
                 cin >> angle;
                 result = transRotate(angle) * result;
                 break;
             case 'S':
+                cout << "Enter the x and y scaling factors: ";
                 cin >> x >> y;
                 result = transScale(x, y) * result;
                 break;
             case 'D':
                 break;
             default:
-                cout << "Invalid choice" << endl;
+                cout << "Invalid choice. Please try again." << endl;
                 break;
         }
 
@@ -178,6 +181,7 @@ Matrix transformMenu()
 // get the point from the user 
 Matrix getPoint() 
 {
+    cout << "Enter x and y: ";
     double x, y;
     cin >> x >> y;
     Matrix m(3, 1);

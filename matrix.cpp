@@ -107,11 +107,9 @@ Matrix operator*(const Matrix& m, double scalar) {
 std::ostream& operator<<(std::ostream& os, const Matrix& m) {
     for (int i = 0; i < m.getRows(); ++i) {
         for (int j = 0; j < m.getCols(); ++j) {
-            os << std::setw(10) << m.at(i, j);
+            os << std::setw(10) << m.at(i, j) << " ";
         }
-        if (i < m.getRows() - 1) {
-            os << "\n";
-        }
+        os << "\n";
     }
     return os;
 }
